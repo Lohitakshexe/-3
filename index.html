@@ -27,19 +27,60 @@
     .text {
       font-size: 40px; /* Sets a readable font size */
       font-weight: bold; /* Makes the text bold */
-      font-style: italic; /* Makes the text italic */
       margin: 0; /* Removes default margin */
       animation: fadeIn 2s; /* Adds fade-in animation */
+      text-shadow: 
+        0 0 5px lavender,   /* Light glow effect */
+        0 0 10px lavender, 
+        0 0 15px #ff00ff,   /* Pink glow effect for depth */
+        0 0 20px #ff00ff,
+        0 0 30px #ff00ff,
+        0 0 40px #ff00ff;
+      transform: translateZ(0); /* Enables hardware acceleration for better performance */
     }
 
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
-  </style>
+    
+    .glow {
+      animation: glowAnimation 1.5s infinite alternate; /* Adds glowing animation */
+    }
+
+    @keyframes glowAnimation {
+      from {
+        text-shadow:
+          0 0 5px lavender,
+          0 0 10px lavender,
+          0 0 15px #ff00ff,
+          0 0 20px #ff00ff,
+          0 0 30px #ff00ff,
+          0 0 40px #ff00ff;
+      }
+      to {
+        text-shadow:
+          0 0 10px lavender,
+          0 0 20px lavender,
+          0 0 30px #ff00ff,
+          0 0 40px #ff00ff,
+          0 0 50px #ff00ff,
+          0 0 60px #ff00ff;
+      }
+    }
+    
+    .text:hover {
+      animation: glowAnimation; /* Apply glow animation on hover */
+    }
+    
+    .text:hover {
+      cursor: pointer; /* Changes cursor to pointer on hover */
+    }
+
+</style>
 </head>
 <body>
-  <img src="sh green lav raw.jpg" alt="SH soo good">
-  <p class="text">*LK &lt;3 SH*</p>
+   <img src="sh green lav raw.jpg" alt="SH soo good">
+   <p class="text glow">*LK &lt;3 SH*</p>
 </body>
 </html>
