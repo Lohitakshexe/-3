@@ -21,44 +21,63 @@
     /* Flower Styles */
     .flower {
       position: absolute;
-      bottom: 0;
       width: 30px;
       height: 30px;
-      background-color: #4CAF50; /* Green color for simplicity */
       border-radius: 50%;
       opacity: 0.8;
     }
 
     .flower--1 {
       left: 10%;
-      animation: windSway 7s linear infinite, moveUp 10s linear infinite;
+      background-color: #4CAF50; /* Green */
+      animation: moveDown 5s linear infinite; /* Move down */
     }
 
     .flower--2 {
-      left: 40%;
-      width: 20px; /* Different sizes */
-      height: 20px;
-      background-color: #FFEB3B; /* Yellow color */
-      animation: windSway 5s linear infinite, moveUp 12s linear infinite;
+      left: 20%;
+      background-color: #FFEB3B; /* Yellow */
+      animation: moveDown 6s linear infinite; /* Move down */
     }
 
     .flower--3 {
+      left: 30%;
+      background-color: #E91E63; /* Pink */
+      animation: moveDown 4s linear infinite; /* Move down */
+    }
+
+    .flower--4 {
+      left: 40%;
+      background-color: #FF5722; /* Orange */
+      animation: moveDown 5.5s linear infinite; /* Move down */
+    }
+
+    .flower--5 {
+      left: 50%;
+      background-color: #9C27B0; /* Purple */
+      animation: moveDown 6.5s linear infinite; /* Move down */
+    }
+
+    .flower--6 {
+      left: 60%;
+      background-color: #2196F3; /* Blue */
+      animation: moveDown 7s linear infinite; /* Move down */
+    }
+
+    .flower--7 {
       left: 70%;
-      width: 40px; /* Different sizes */
-      height: 40px;
-      background-color: #E91E63; /* Pink color */
-      animation: windSway 6s linear infinite, moveUp 11s linear infinite;
+      background-color: #FFC107; /* Amber */
+      animation: moveDown 8s linear infinite; /* Move down */
     }
 
-    @keyframes windSway {
-      0% { transform: translateX(0) rotate(-5deg); }
-      50% { transform: translateX(10px) rotate(5deg); }
-      100% { transform: translateX(0) rotate(-5deg); }
+    .flower--8 {
+      left: 80%;
+      background-color: #009688; /* Teal */
+      animation: moveDown 9s linear infinite; /* Move down */
     }
 
-    @keyframes moveUp {
-      0% { transform: translateY(100px); }
-      100% { transform: translateY(-500px); opacity: 0; }
+    @keyframes moveDown {
+      from { transform: translateY(-100px); opacity: 1; }
+      to { transform: translateY(100vh); opacity: 0; } /* Move from top to bottom */
     }
 
     img {
@@ -93,51 +112,251 @@
     @keyframes glowAnimation {
       from {
         text-shadow:
-          0 0 5px #8300ff,
-          0 0 10px #8300ff,
-          0 0 15px #8300ff,
-          0 0 20px #8300ff,
-          0 0 30px #8300ff,
-          0 0 40px #8300ff;
-      }
-      to {
-        text-shadow:
-          0 0 10px #8300ff,
-          0 0 20px #8300ff,
-          0 0 30px #8300ff,
-          0 0 40px #8300ff,
-          0 0 50px #8300ff,
-          0 0 60px #8300ff;
-      }
-    }
+          ...
+          ...
+          ...
+          ...
+          ...
+          ...
+          ...
+          ...
+          ...
+          ...
+          ...
+          ...
+          ...
+          ...
+          ...
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+         
+         
+         
+         
+         
+         
+         ...
+
+         ...
+         ... 
+         ...
+
+         ...
+         ... 
+         ...
+
+         ... 
+         ...
+
+         ... 
+         ...
+
+         ... 
+         ...
+
+         ... 
+         ...
+
+         ... 
+         ...
+
+         ... 
+         ...
+
+        
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+
+   
+
     
-    @keyframes glowBorder {
-      from {
-        box-shadow:
-          0 0 5px #19b555,
-          0 0 10px #19b555,
-          0 0 15px #19b555,
-          0 0 20px #19b555,
-          0 0 30px #19b555,
-          0 0 40px #19b555;
-      }
-      to {
-        box-shadow:
-          0 0 10px #19b555,
-          0 0 20px #19b555,
-          0 0 30px #19b555,
-          0 0 40px #19b555,
-          0 0 50px #19b555,
-          0 0 60px #19b555;
-      }
-    }
-  </style>
+ 
+
+    
+ 
+
+    
+ 
+
+    
+ 
+
+    
+ 
+
+    
+ 
+
+    
+ 
+
+    
+ 
+
+    
+ 
+
+    
+ 
+
+    
+ 
+
+    
+ 
+
+    
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+    
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</style>
 </head>
 <body>
-  <div class="flower flower--1"></div>
-  <div class="flower flower--2"></div>
-  <div class="flower flower--3"></div>
-  <img src="sh green lav raw.jpg" alt="SH soo good">
-  <p class="text">*LK &lt;3 SH*</p>
+   <!-- Increased number of flowers -->
+   <div class="flower flower--1"></div>
+   <div class="flower flower--2"></div>
+   <div class="flower flower--3"></div>
+   <div class="flower flower--4"></div>
+   <div class="flower flower--5"></div>
+   <div class="flower flower--6"></div>
+   <div class="flower flower--7"></div>
+   <div class="flower flower--8"></div>
+
+   <img src="sh green lav raw.jpg" alt="SH soo good">
+   <p class="text">*LK &lt;3 SH*</p>
 </body>
 </html>
