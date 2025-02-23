@@ -3,176 +3,109 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LK <3 SH</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+  <title>Animated Blooming Flowers</title>
   <style>
     body {
-      font-family: 'Satisfy', cursive;
-      background-color: #191a1a;
-      color: lavender;
       margin: 0;
-      padding: 20px;
-      text-align: center;
-      overflow: hidden; /* Prevent flowers from overflowing outside the screen */
+      padding: 0;
+      background: linear-gradient(to bottom, #001f3f, #111);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
-    /* Flower Container */
     .flower {
-      position: absolute;
-      width: 50px; /* Size of the flower */
-      height: 50px;
-      animation: moveDown 10s linear infinite, sway 3s ease-in-out infinite; /* Falling and swaying animation */
+      position: relative;
+      width: 100px;
+      height: 100px;
+      animation: sway 4s ease-in-out infinite alternate;
     }
 
     /* Petals */
     .petal {
       position: absolute;
-      width: 20px;
-      height: 40px;
+      width: 50px;
+      height: 100px;
       background-color: #FF69B4; /* Pink petals */
-      border-radius: 50%; /* Rounded petal shape */
+      border-radius: 50%;
+      transform-origin: bottom center;
     }
 
-    .petal:nth-child(1) { transform: rotate(0deg) translate(15px); }
-    .petal:nth-child(2) { transform: rotate(45deg) translate(15px); }
-    .petal:nth-child(3) { transform: rotate(90deg) translate(15px); }
-    .petal:nth-child(4) { transform: rotate(135deg) translate(15px); }
-    .petal:nth-child(5) { transform: rotate(180deg) translate(15px); }
-    .petal:nth-child(6) { transform: rotate(225deg) translate(15px); }
-    .petal:nth-child(7) { transform: rotate(270deg) translate(15px); }
-    .petal:nth-child(8) { transform: rotate(315deg) translate(15px); }
+    .petal:nth-child(1) { transform: rotate(0deg); }
+    .petal:nth-child(2) { transform: rotate(45deg); }
+    .petal:nth-child(3) { transform: rotate(90deg); }
+    .petal:nth-child(4) { transform: rotate(135deg); }
+    .petal:nth-child(5) { transform: rotate(180deg); }
+    .petal:nth-child(6) { transform: rotate(225deg); }
+    .petal:nth-child(7) { transform: rotate(270deg); }
+    .petal:nth-child(8) { transform: rotate(315deg); }
 
-    /* Flower Center */
+    /* Center of the Flower */
     .center {
       position: absolute;
-      top: calc(50% - 10px);
-      left: calc(50% - 10px);
-      width: 20px;
-      height: 20px;
+      top: 50%;
+      left: 50%;
+      width: 40px;
+      height: 40px;
       background-color: yellow; /* Yellow center */
-      border-radius: 50%; /* Circular center */
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
     }
 
-    /* Animations */
-    @keyframes moveDown {
+    /* Animation for Swaying */
+    @keyframes sway {
+      0% { transform: translateX(-10px); }
+      100% { transform: translateX(10px); }
+    }
+
+    /* Blooming Animation */
+    @keyframes bloom {
       from {
-        transform: translateY(-100px);
-        opacity: 1;
+        transform: scale(0);
+        opacity: 0;
       }
       to {
-        transform: translateY(100vh);
-        opacity: 0; /* Fade out as it falls */
+        transform: scale(1);
+        opacity: 1;
       }
     }
 
-    @keyframes sway {
-      0%, 100% { transform: translateX(-10px); } /* Sway left */
-      50% { transform: translateX(10px); } /* Sway right */
+    /* Add Multiple Flowers */
+    .flower-container {
+      position: absolute;
+      animation: moveDown linear infinite;
     }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 20px;
-      border: 5px solid lavender;
-      box-shadow:
-        0 0 5px #19b555,
-        0 0 10px #19b555,
-        0 0 15px #19b555,
-        0 0 20px #19b555,
-        0 0 30px #19b555,
-        0 0 40px #19b555;
-      animation: glowBorder 1.5s infinite alternate;
+    .flower-container:nth-child(1) {
+      left: 10%;
+      animation-duration: 8s;
     }
 
-    .text {
-      font-size: 40px;
-      font-weight: bold;
-      margin: 0;
-      animation: bounceTextGlowAnimation, glowAnimation infinite alternate ease-in-out;
+    .flower-container:nth-child(2) {
+      left: 30%;
+      animation-duration: 10s;
+    }
 
-     
-     
-     
-     @keyframes glowAnimation {
-       from {
-         text-shadow:
-           ...
-           ...
-           ...
-           ...
-           ...
-           ...
-           ...
-           ...
-           ...
-           ...
-           ...
-           ...
-           ...
-           ...
-       }
-       to {
-         text-shadow:
-           ...
-           ...
-           ...
-           ...
-           ...
-           ...
-       }
-     }
+    .flower-container:nth-child(3) {
+      left: 50%;
+      animation-duration: 12s;
+    }
 
-     @keyframes bounceTextGlowAnimation {
-       from { transform: translateY(-5px); }
-       to { transform: translateY(5px); }
-     }
+    .flower-container:nth-child(4) {
+      left: 70%;
+      animation-duration: 9s;
+    }
 
-     @keyframes glowBorder {
-       from {
-         box-shadow:
-           ... 
-       }
-       to {
-         box-shadow:
-           ... 
-       }
-     }
+    .flower-container:nth-child(5) {
+      left: 90%;
+      animation-duration: 11s;
+    }
 
-   </style>
-</head>
-<body>
-   <!-- Increased number of flowers -->
-   <div class="flower" style="left:5%; animation-delay:-2s;">
-     <div class="petal"></div>
-     <div class="petal"></div>
-     <div class="petal"></div>
-     <div class="petal"></div>
-     <div class="center"></div>
-   </div>
-
-   <div class="flower" style="left:10%; animation-delay:-4s;">
-     <div class="petal"></div>
-     <div class="petal"></div>
-     <div class="petal"></div>
-     <div class="petal"></div>
-     <div class="center"></div>
-   </div>
-
-   <div class="flower" style="left:15%; animation-delay:-3s;">
-     <div class="petal"></div>
-     <div class="petal"></div>
-     <div class="petal"></div>
-     <div class="petal"></div>
-     <div class="center"></div>
-   </div>
-
-   <!-- Add more flowers as needed -->
-   
-   <img src="sh green lav raw.jpg" alt="SH soo good">
-   <p class="text">*LK &lt;3 SH*</p>
-</body>
-</html>
-
+    @keyframes moveDown {
+      from {
+        top: -150px;
+        opacity: 1;
+        transform-origin:center
+        ;
