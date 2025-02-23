@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>0_0</title>
+  <title>LK <3 SH</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
@@ -15,6 +15,50 @@
       margin: 0;
       padding: 20px;
       text-align: center;
+      overflow: hidden; /* Hide overflowing flowers */
+    }
+
+    /* Flower Styles */
+    .flower {
+      position: absolute;
+      bottom: 0;
+      width: 30px;
+      height: 30px;
+      background-color: #4CAF50; /* Green color for simplicity */
+      border-radius: 50%;
+      opacity: 0.8;
+    }
+
+    .flower--1 {
+      left: 10%;
+      animation: windSway 7s linear infinite, moveUp 10s linear infinite;
+    }
+
+    .flower--2 {
+      left: 40%;
+      width: 20px; /* Different sizes */
+      height: 20px;
+      background-color: #FFEB3B; /* Yellow color */
+      animation: windSway 5s linear infinite, moveUp 12s linear infinite;
+    }
+
+    .flower--3 {
+      left: 70%;
+      width: 40px; /* Different sizes */
+      height: 40px;
+      background-color: #E91E63; /* Pink color */
+      animation: windSway 6s linear infinite, moveUp 11s linear infinite;
+    }
+
+    @keyframes windSway {
+      0% { transform: translateX(0) rotate(-5deg); }
+      50% { transform: translateX(10px) rotate(5deg); }
+      100% { transform: translateX(0) rotate(-5deg); }
+    }
+
+    @keyframes moveUp {
+      0% { transform: translateY(100px); }
+      100% { transform: translateY(-500px); opacity: 0; }
     }
 
     img {
@@ -44,18 +88,6 @@
         0 0 20px #8300ff,
         0 0 30px #8300ff,
         0 0 40px #8300ff;
-    }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-      }
-      40% {
-        transform: translateY(-30px);
-      }
-      60% {
-        transform: translateY(-15px);
-      }
     }
 
     @keyframes glowAnimation {
@@ -102,12 +134,10 @@
   </style>
 </head>
 <body>
+  <div class="flower flower--1"></div>
+  <div class="flower flower--2"></div>
+  <div class="flower flower--3"></div>
   <img src="sh green lav raw.jpg" alt="SH soo good">
-  <p class="text">u changed me for good 
-    and that affect will 
-  stay with me
-  forever
-  
-  Thankyou</p>
+  <p class="text">*LK &lt;3 SH*</p>
 </body>
 </html>
