@@ -15,53 +15,61 @@
       margin: 0;
       padding: 20px;
       text-align: center;
-      overflow: hidden; /* Hide overflowing flowers */
+      overflow: hidden; /* Prevent flowers from overflowing outside the screen */
     }
 
-    /* Flower Styles */
+    /* Flower Container */
     .flower {
       position: absolute;
-      width: 30px; /* Width of the flower */
-      height: 30px; /* Height of the flower */
-      opacity: 0.8;
+      width: 50px; /* Size of the flower */
+      height: 50px;
+      animation: moveDown 10s linear infinite, sway 3s ease-in-out infinite; /* Falling and swaying animation */
     }
 
-    .flower .petal {
+    /* Petals */
+    .petal {
       position: absolute;
-      width: 15px; /* Petal width */
-      height: 30px; /* Petal height */
-      background-color: #FFEB3B; /* Petal color */
-      border-radius: 15px; /* Rounded edges for petals */
+      width: 20px;
+      height: 40px;
+      background-color: #FF69B4; /* Pink petals */
+      border-radius: 50%; /* Rounded petal shape */
     }
 
-    .flower--1 .petal { transform: rotate(0deg); }
-    .flower--1 { left: 5%; animation: moveDown 8s linear infinite; }
-    
-    .flower--2 .petal { transform: rotate(45deg); }
-    .flower--2 { left: 10%; background-color: #FF5722; animation: moveDown 9s linear infinite; }
-    
-    .flower--3 .petal { transform: rotate(90deg); }
-    .flower--3 { left: 15%; background-color: #E91E63; animation: moveDown 7s linear infinite; }
-    
-    .flower--4 .petal { transform: rotate(135deg); }
-    .flower--4 { left: 20%; background-color: #4CAF50; animation: moveDown 8.5s linear infinite; }
+    .petal:nth-child(1) { transform: rotate(0deg) translate(15px); }
+    .petal:nth-child(2) { transform: rotate(45deg) translate(15px); }
+    .petal:nth-child(3) { transform: rotate(90deg) translate(15px); }
+    .petal:nth-child(4) { transform: rotate(135deg) translate(15px); }
+    .petal:nth-child(5) { transform: rotate(180deg) translate(15px); }
+    .petal:nth-child(6) { transform: rotate(225deg) translate(15px); }
+    .petal:nth-child(7) { transform: rotate(270deg) translate(15px); }
+    .petal:nth-child(8) { transform: rotate(315deg) translate(15px); }
 
-    .flower--5 .petal { transform: rotate(180deg); }
-    .flower--5 { left: 25%; background-color: #9C27B0; animation: moveDown 9.5s linear infinite; }
+    /* Flower Center */
+    .center {
+      position: absolute;
+      top: calc(50% - 10px);
+      left: calc(50% - 10px);
+      width: 20px;
+      height: 20px;
+      background-color: yellow; /* Yellow center */
+      border-radius: 50%; /* Circular center */
+    }
 
-    .flower--6 .petal { transform: rotate(225deg); }
-    .flower--6 { left: 30%; background-color: #2196F3; animation: moveDown 10s linear infinite; }
-
-    .flower--7 .petal { transform: rotate(270deg); }
-    .flower--7 { left: 35%; background-color: #FFC107; animation: moveDown 11s linear infinite; }
-
-    .flower--8 .petal { transform: rotate(315deg); }
-    .flower--8 { left: 40%; background-color: #009688; animation: moveDown 12s linear infinite; }
-
+    /* Animations */
     @keyframes moveDown {
-      0% { transform: translateY(-100px); opacity: 1; }
-      70% { opacity: 1; } /* Keep opacity at 1 longer */
-      100% { transform: translateY(100vh); opacity: 0; } /* Move from top to bottom */
+      from {
+        transform: translateY(-100px);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(100vh);
+        opacity: 0; /* Fade out as it falls */
+      }
+    }
+
+    @keyframes sway {
+      0%, 100% { transform: translateX(-10px); } /* Sway left */
+      50% { transform: translateX(10px); } /* Sway right */
     }
 
     img {
@@ -83,199 +91,88 @@
       font-size: 40px;
       font-weight: bold;
       margin: 0;
-      animation: bounce 2s, glowAnimation 1.5s infinite alternate;
-      text-shadow:
-        ...
-        ...
-        ...
-        ...
-        ...
-        ...
-        ...
-        ...
-        ...
-        ...
-        ...
-        ...
-        ...
-        ...
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      animation: bounceTextGlowAnimation, glowAnimation infinite alternate ease-in-out;
+
      
      
      
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
+     @keyframes glowAnimation {
+       from {
+         text-shadow:
+           ...
+           ...
+           ...
+           ...
+           ...
+           ...
+           ...
+           ...
+           ...
+           ...
+           ...
+           ...
+           ...
+           ...
+       }
+       to {
+         text-shadow:
+           ...
+           ...
+           ...
+           ...
+           ...
+           ...
+       }
+     }
 
-   
-  
-   
-  
-   
-  
-   
-  
-   
-  
-   
-  
-   
-  
-   
-  
-   
-  
-   
-  
-   
-  
-   
+     @keyframes bounceTextGlowAnimation {
+       from { transform: translateY(-5px); }
+       to { transform: translateY(5px); }
+     }
 
-   
+     @keyframes glowBorder {
+       from {
+         box-shadow:
+           ... 
+       }
+       to {
+         box-shadow:
+           ... 
+       }
+     }
 
-    
- 
-
-    
- 
-
-    
- 
-
-    
- 
-
-    
- 
-
-    
- 
-
-    
- 
-
-    
- 
-
-    
- 
-
-    
- 
-
-    
- 
-
-    
- 
-
-    
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-    
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-</style>
+   </style>
 </head>
 <body>
    <!-- Increased number of flowers -->
-   <div class="flower flower--1"><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div></div>
-   <div class="flower flower--2"><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div></div>
-   <div class="flower flower--3"><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div></div>
-   <div class="flower flower--4"><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div></div>
-   <div class="flower flower--5"><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div></div>
-   <div class="flower flower--6"><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div></div>
-   <div class="flower flower--7"><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div></div>
-   <div class="flower flower--8"><div class="petal"></div><div class="petal"></dev> <dev>class= " petall"
-   </dev> </dev> </dev> </dev> </dev> </dev> </dev> </dev> </dev> 
+   <div class="flower" style="left:5%; animation-delay:-2s;">
+     <div class="petal"></div>
+     <div class="petal"></div>
+     <div class="petal"></div>
+     <div class="petal"></div>
+     <div class="center"></div>
+   </div>
+
+   <div class="flower" style="left:10%; animation-delay:-4s;">
+     <div class="petal"></div>
+     <div class="petal"></div>
+     <div class="petal"></div>
+     <div class="petal"></div>
+     <div class="center"></div>
+   </div>
+
+   <div class="flower" style="left:15%; animation-delay:-3s;">
+     <div class="petal"></div>
+     <div class="petal"></div>
+     <div class="petal"></div>
+     <div class="petal"></div>
+     <div class="center"></div>
+   </div>
+
+   <!-- Add more flowers as needed -->
+   
    <img src="sh green lav raw.jpg" alt="SH soo good">
    <p class="text">*LK &lt;3 SH*</p>
 </body>
 </html>
+
