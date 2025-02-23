@@ -21,158 +21,47 @@
     /* Flower Styles */
     .flower {
       position: absolute;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
+      width: 30px; /* Width of the flower */
+      height: 30px; /* Height of the flower */
       opacity: 0.8;
     }
 
-    .flower--1 {
-      left: 5%;
-      background-color: #4CAF50; /* Green */
-      animation: moveDown 8s linear infinite;
+    .flower .petal {
+      position: absolute;
+      width: 15px; /* Petal width */
+      height: 30px; /* Petal height */
+      background-color: #FFEB3B; /* Petal color */
+      border-radius: 15px; /* Rounded edges for petals */
     }
 
-    .flower--2 {
-      left: 10%;
-      background-color: #FFEB3B; /* Yellow */
-      animation: moveDown 9s linear infinite;
-    }
+    .flower--1 .petal { transform: rotate(0deg); }
+    .flower--1 { left: 5%; animation: moveDown 8s linear infinite; }
+    
+    .flower--2 .petal { transform: rotate(45deg); }
+    .flower--2 { left: 10%; background-color: #FF5722; animation: moveDown 9s linear infinite; }
+    
+    .flower--3 .petal { transform: rotate(90deg); }
+    .flower--3 { left: 15%; background-color: #E91E63; animation: moveDown 7s linear infinite; }
+    
+    .flower--4 .petal { transform: rotate(135deg); }
+    .flower--4 { left: 20%; background-color: #4CAF50; animation: moveDown 8.5s linear infinite; }
 
-    .flower--3 {
-      left: 15%;
-      background-color: #E91E63; /* Pink */
-      animation: moveDown 7s linear infinite;
-    }
+    .flower--5 .petal { transform: rotate(180deg); }
+    .flower--5 { left: 25%; background-color: #9C27B0; animation: moveDown 9.5s linear infinite; }
 
-    .flower--4 {
-      left: 20%;
-      background-color: #FF5722; /* Orange */
-      animation: moveDown 8.5s linear infinite;
-    }
+    .flower--6 .petal { transform: rotate(225deg); }
+    .flower--6 { left: 30%; background-color: #2196F3; animation: moveDown 10s linear infinite; }
 
-    .flower--5 {
-      left: 25%;
-      background-color: #9C27B0; /* Purple */
-      animation: moveDown 9.5s linear infinite;
-    }
+    .flower--7 .petal { transform: rotate(270deg); }
+    .flower--7 { left: 35%; background-color: #FFC107; animation: moveDown 11s linear infinite; }
 
-    .flower--6 {
-      left: 30%;
-      background-color: #2196F3; /* Blue */
-      animation: moveDown 10s linear infinite;
-    }
-
-    .flower--7 {
-      left: 35%;
-      background-color: #FFC107; /* Amber */
-      animation: moveDown 11s linear infinite;
-    }
-
-    .flower--8 {
-      left: 40%;
-      background-color: #009688; /* Teal */
-      animation: moveDown 12s linear infinite;
-    }
-        .flower--9 {
-      left: 45%;
-      background-color: #4CAF50; /* Green */
-      animation: moveDown 8s linear infinite;
-    }
-
-    .flower--10 {
-      left: 50%;
-      background-color: #FFEB3B; /* Yellow */
-      animation: moveDown 9s linear infinite;
-    }
-
-    .flower--11 {
-      left: 55%;
-      background-color: #E91E63; /* Pink */
-      animation: moveDown 7s linear infinite;
-    }
-
-    .flower--12 {
-      left: 60%;
-      background-color: #FF5722; /* Orange */
-      animation: moveDown 8.5s linear infinite;
-    }
-
-    .flower--13 {
-      left: 65%;
-      background-color: #9C27B0; /* Purple */
-      animation: moveDown 9.5s linear infinite;
-    }
-
-    .flower--14 {
-      left: 70%;
-      background-color: #2196F3; /* Blue */
-      animation: moveDown 10s linear infinite;
-    }
-
-    .flower--15 {
-      left: 75%;
-      background-color: #FFC107; /* Amber */
-      animation: moveDown 11s linear infinite;
-    }
-
-    .flower--16 {
-      left: 80%;
-      background-color: #009688; /* Teal */
-      animation: moveDown 12s linear infinite;
-    }
-
-       .flower--17 {
-      left: 85%;
-      background-color: #4CAF50; /* Green */
-      animation: moveDown 8s linear infinite;
-    }
-
-    .flower--18 {
-      left: 90%;
-      background-color: #FFEB3B; /* Yellow */
-      animation: moveDown 9s linear infinite;
-    }
-
-    .flower--19 {
-      left: 95%;
-      background-color: #E91E63; /* Pink */
-      animation: moveDown 7s linear infinite;
-    }
-        .flower--20 {
-      left: 5%;
-      background-color: #FF5722; /* Orange */
-      animation: moveDown 8.5s linear infinite;
-    }
-
-    .flower--21 {
-      left: 15%;
-      background-color: #9C27B0; /* Purple */
-      animation: moveDown 9.5s linear infinite;
-    }
-
-    .flower--22 {
-      left: 25%;
-      background-color: #2196F3; /* Blue */
-      animation: moveDown 10s linear infinite;
-    }
-
-    .flower--23 {
-      left: 35%;
-      background-color: #FFC107; /* Amber */
-      animation: moveDown 11s linear infinite;
-    }
-
-    .flower--24 {
-      left: 45%;
-      background-color: #009688; /* Teal */
-      animation: moveDown 12s linear infinite;
-    }
+    .flower--8 .petal { transform: rotate(315deg); }
+    .flower--8 { left: 40%; background-color: #009688; animation: moveDown 12s linear infinite; }
 
     @keyframes moveDown {
       0% { transform: translateY(-100px); opacity: 1; }
       70% { opacity: 1; } /* Keep opacity at 1 longer */
-      100% { transform: translateY(100vh); opacity: 0; }
+      100% { transform: translateY(100vh); opacity: 0; } /* Move from top to bottom */
     }
 
     img {
@@ -196,16 +85,6 @@
       margin: 0;
       animation: bounce 2s, glowAnimation 1.5s infinite alternate;
       text-shadow:
-        0 0 5px #8300ff,
-        0 0 10px #8300ff,
-        0 0 15px #8300ff,
-        0 0 20px #8300ff,
-        0 0 30px #8300ff,
-        0 0 40px #8300ff;
-    }
-
-    @keyframes glowAnimation {
-      from {
         ...
         ...
         ...
@@ -220,11 +99,6 @@
         ...
         ...
         ...
-        ...
-       
-       
-       
-       
        
        
        
@@ -276,7 +150,7 @@
      
      
      
- 
+
    
   
    
@@ -302,9 +176,6 @@
    
 
    
-
-    
- 
 
     
  
@@ -340,6 +211,9 @@
  
 
     
+ 
+
+    
    
 
    
@@ -387,45 +261,20 @@
   
 
   
-
-  
-
-  
-
-  
-
-   
- 
 
 </style>
 </head>
 <body>
-   <!-- Doubled number of flowers -->
-   <div class="flower flower--1"></div>
-   <div class="flower flower--2"></div>
-   <div class="flower flower--3"></div>
-   <div class="flower flower--4"></div>
-   <div class="flower flower--5"></div>
-   <div class="flower flower--6"></div>
-   <div class="flower flower--7"></div>
-   <div class="flower flower--8"></div>
-    <div class="flower flower--9"></div>
-   <div class="flower flower--10"></div>
-   <div class="flower flower--11"></div>
-   <div class="flower flower--12"></div>
-    <div class="flower flower--13"></div>
-   <div class="flower flower--14"></div>
-   <div class="flower flower--15"></div>
-   <div class="flower flower--16"></div>
-    <div class="flower flower--17"></div>
-   <div class="flower flower--18"></div>
-   <div class="flower flower--19"></div>
-   <div class="flower flower--20"></div>
-      <div class="flower flower--21"></div>
-   <div class="flower flower--22"></div>
-   <div class="flower flower--23"></div>
-   <div class="flower flower--24"></div>
-
+   <!-- Increased number of flowers -->
+   <div class="flower flower--1"><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div></div>
+   <div class="flower flower--2"><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div></div>
+   <div class="flower flower--3"><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div></div>
+   <div class="flower flower--4"><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div></div>
+   <div class="flower flower--5"><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div></div>
+   <div class="flower flower--6"><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div></div>
+   <div class="flower flower--7"><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div></div>
+   <div class="flower flower--8"><div class="petal"></div><div class="petal"></dev> <dev>class= " petall"
+   </dev> </dev> </dev> </dev> </dev> </dev> </dev> </dev> </dev> 
    <img src="sh green lav raw.jpg" alt="SH soo good">
    <p class="text">*LK &lt;3 SH*</p>
 </body>
